@@ -21,9 +21,6 @@ HappyCat = function(x)
 
 
 
-# global mimima at (-1,-1,...,-1) - f(x)=0  - d=[-2,2] (qlq dominio)
-
-
 dim=30
 RUNS=50
 Y=0;X=0
@@ -31,7 +28,7 @@ Y=0;X=0
 for(i in 1:RUNS)
   {
   JDE_R=JDEoptim(rep(-2, dim), rep(2, dim), HappyCat,
-         tol = 1e-20, NP=100, trace = FALSE, triter = 1000)
+         tol = 1e-20, NP=100, trace = FALSE, maxiter =1000)
   Y[i]=JDE_R$value
   X=JDE_R$par
   }
