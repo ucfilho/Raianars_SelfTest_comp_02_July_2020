@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library('DEoptimR')
+
+
+Noisy_Quartic= function(x)
+  {
+  Num=length(x)  
+  sumx4=0
+  for(1 in 1:Num)
+    { sumx4=sumx4+i*x[i]**4}
+
+  sumx4=sumx4+runif(1)
+  return(sumx4)
+  }
+# f(x)=0 x=(0,0) [−1.28, 1.28]
+
+
+dim=30
+RUNS=50
+Y=0;X=0
+
+for(i in 1:RUNS)
+  {
+  JDE_R=JDEoptim(rep(-1.28, dim), rep(1.28, dim), Noisy_Quartic,
+         tol = 1e-20,NP=100, trace = FALSE,  maxiter =1000)
+  Y[i]=JDE_R$value
+
+  }
+
+
+print(Y)
+MEAN=mean(Y)
+STD=sd(Y)
+MAX=max(Y)
+MIN=min(Y)
+cat('NoisyQuartic JDE DIM=',dim,'RUNS=',RUNS,'\n')
+cat('MEAN=',MEAN,'\n')
+cat('MAX',MAX,'\n')
+cat('MIN=',MIN,'\n')
+cat('STD',STD,'\n')
+
+
+```
+
+
+
+
+
+
