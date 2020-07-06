@@ -45,6 +45,13 @@ cat('STD',STD,'\n')
 
 
 ```
+---
+NoisyQuartic JDE DIM= 30 RUNS= 50 
+MEAN= 0.003330938 
+MAX 0.004912 
+MIN= 0.001303125 
+STD 0.0008328935 
+---
 
 
 
