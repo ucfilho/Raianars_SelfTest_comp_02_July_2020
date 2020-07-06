@@ -24,8 +24,8 @@ HappyCat = function(x)
 # global mimima at (-1,-1,...,-1) - f(x)=0  - d=[-2,2] (qlq dominio)
 
 
-dim=2
-RUNS=3
+dim=30
+RUNS=50
 Y=0;X=0
 
 for(i in 1:RUNS)
