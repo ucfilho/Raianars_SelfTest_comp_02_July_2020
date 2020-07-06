@@ -31,7 +31,7 @@ Y=0;X=0
 for(i in 1:RUNS)
   {
   JDE_R=JDEoptim(rep(-2, dim), rep(2, dim), HappyCat,
-         tol = 1e-20, trace = FALSE, triter = 1000)
+         tol = 1e-20, NP=100, trace = FALSE, triter = 1000)
   Y[i]=JDE_R$value
   X=JDE_R$par
   }
