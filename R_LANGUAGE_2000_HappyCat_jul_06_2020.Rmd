@@ -24,14 +24,14 @@ HappyCat = function(x)
 # global mimima at (-1,-1,...,-1) - f(x)=0  - d=[-2,2] (qlq dominio)
 
 
-dim=2
-RUNS=3
+dim=30
+RUNS=50
 Y=0;X=0
 
 for(i in 1:RUNS)
   {
   JDE_R=JDEoptim(rep(-2, dim), rep(2, dim), HappyCat,
-         tol = 1e-20, trace = FALSE, triter = 1000)
+         tol = 1e-20, trace = FALSE, maxiter =2000)
   Y[i]=JDE_R$value
   X=JDE_R$par
   }
@@ -42,7 +42,7 @@ MEAN=mean(Y)
 STD=sd(Y)
 MAX=max(Y)
 MIN=min(Y)
-cat('HappyCat JDE DIM=',dim,'RUNS=',RUNS,'\n')
+cat('HappyCat JDE DIM=',dim,'ITE=',2000,'RUNS=',RUNS,'\n')
 cat('MEAN=',MEAN,'\n')
 cat('MAX',MAX,'\n')
 cat('MIN=',MIN,'\n')
@@ -53,8 +53,12 @@ cat('STD',STD,'\n')
 
 
 
+---
+HappyCat JDE DIM= 30 ITE=2000 RUNS= 50 
+MEAN= 0.2878358 
+MAX 0.4036518 
+MIN= 0.178747 
+STD 0.03917105 
+---
 
-```{r}
-print(summary(JDE_R))
-```
 
