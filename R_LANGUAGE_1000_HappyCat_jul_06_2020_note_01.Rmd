@@ -50,11 +50,10 @@ cat('STD',STD,'\n')
 
 
 ```
+HappyCat JDE DIM= 30 RUNS= 50 
+MEAN= 0.3564617 
+MAX 0.4784925 
+MIN= 0.2057177 
+STD 0.05321779 
 
-
-
-
-```{r}
-print(summary(JDE_R))
 ```
-
